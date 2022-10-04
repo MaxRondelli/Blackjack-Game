@@ -5,7 +5,11 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-client = discord.Client(intents = discord.Intents.default())
+# Before that, You have to enable message intent for the bot from "Discord Dev Portal"
+intent = discord.Intents.default()
+intent.members = True
+intent.message_content = True
+client = discord.Client(intents = intent)
 
 @client.event
 async def on_ready():

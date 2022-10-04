@@ -1,9 +1,10 @@
 import os
 import discord
 from dotenv import load_dotenv
-    
+from Server import Server
+
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN') # Fill in this. This is the generated token for your bot from the Discord Developer Page
 
 # Before that, You have to enable message intent for the bot from "Discord Dev Portal"
 intent = discord.Intents.default()
@@ -24,4 +25,5 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
         
+Server()        
 client.run(TOKEN)

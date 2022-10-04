@@ -1,4 +1,3 @@
-import random
 from Game import Game
 
 g = Game()
